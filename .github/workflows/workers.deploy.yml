@@ -1,9 +1,5 @@
-on:
-  workflow_dispatch:
-    inputs:
-      environment:
-        required: true
-        default: 'dev'
+on: [push]
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
