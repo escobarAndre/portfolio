@@ -35,4 +35,5 @@ jobs:
       - name: Publish to Cloudflare
         uses: cloudflare/wrangler-action@2.0.0
         with:
-          command: ${{ secrets.CLOUDFLARE_API_TOKEN }} publish 
+          apiKey: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          command: publish ${{ secrets.CLOUDFLARE_API_TOKEN }}
