@@ -1,6 +1,9 @@
 name: cloudflare
 
-on: [push]
+on:
+  push:
+    branches: 
+      master
 
 jobs:
   ci:
@@ -31,10 +34,6 @@ jobs:
 
       - name: Build
         run: yarn build
-        env:
-          NITRO_PRESET: cloudflare
-          NUXT_API_URL: 'https://cms.fredrikburmester.com/'
-          NUXT_SSR: 'true'
 
       - name: Publish to Cloudflare
         uses: cloudflare/wrangler-action@2.0.0
