@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Publish app
-        uses: cloudflare/wrangler-action@2.0.0
+        uses: wrangler
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          command: publish --env ${{ github.event.inputs.environment }}
+          command: publish
