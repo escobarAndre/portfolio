@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     name: build
-    - steps: 
+    steps: 
       run: echo ${{ secrets.CF_ACCOUNT_ID }}
 
   deploy:
