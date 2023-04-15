@@ -9,7 +9,7 @@ jobs:
   build:
     name: build
     steps: 
-      run: echo ${{ secrets.CF_ACCOUNT_ID }}
+      - run: echo ${{ secrets.CF_ACCOUNT_ID }}
 
   deploy:
     runs-on: ubuntu-latest
