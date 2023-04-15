@@ -1,6 +1,10 @@
 name: cloudflare
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
+      - develop
 
 jobs:
   ci:
@@ -28,21 +32,17 @@ jobs:
       - name: Install Dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: yarn
-      
-      - name: Wrangler install
-        run: yarn add wrangler global
-
-      - name: Wrangler Who am i
-        run: wrangler whoami
 
       - name: Build
         run: yarn build
-      
-      - name: Wragler publish
-        run: wrangler publish
+        env:
+          NITRO_PRESET: cloudflare
+          NUXT_API_URL: 'https://cms.fredrikburmester.com/'
+          NUXT_SSR: 'true'
 
       - name: Publish to Cloudflare
         uses: cloudflare/wrangler-action@2.0.0
         with:
-          apiKey: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          command: publish
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          command: publish --name fb-nuxt-${{ github.ref_name }}
+name: cloudflare
