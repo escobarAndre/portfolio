@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  - name: test
+  build:
     run: echo ${{ secrets.CF_ACCOUNT_ID }}
 
   deploy:
