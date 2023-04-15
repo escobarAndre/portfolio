@@ -37,4 +37,3 @@ jobs:
         with:
           apiToken: ${{ secrets.CCLOUDFLARE_API_TOKEN }}
           command: publish
-name: cloudflare
