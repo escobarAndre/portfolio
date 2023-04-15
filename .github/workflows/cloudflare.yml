@@ -31,9 +31,15 @@ jobs:
 
       - name: Build
         run: yarn build
+      
+      - name: Wrangler whoami
+        run: yarn add wrangler global
+      
+      - name: Wragler publish
+        run: wrangler publish
 
       - name: Publish to Cloudflare
         uses: cloudflare/wrangler-action@2.0.0
         with:
           apiKey: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          command: publish ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          command: publish
