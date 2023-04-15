@@ -28,12 +28,15 @@ jobs:
       - name: Install Dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: yarn
+      
+      - name: Wrangler install
+        run: yarn add wrangler global
+
+      - name: Wrangler Who am i
+        run: wrangler whoami
 
       - name: Build
         run: yarn build
-      
-      - name: Wrangler whoami
-        run: yarn add wrangler global
       
       - name: Wragler publish
         run: wrangler publish
