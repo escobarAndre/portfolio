@@ -11,7 +11,7 @@ jobs:
     name: build
     steps: 
       - name: build
-        run: echo ${{ secrets.CF_ACCOUNT_ID }}
+        run: echo "secrets.CF_ACCOUNT_ID" ASLJD
 
   deploy:
     runs-on: ubuntu-latest
