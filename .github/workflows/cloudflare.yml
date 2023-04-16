@@ -6,7 +6,8 @@ on:
       - master
 
 jobs:
-  runs-on: ubuntu-latest
+  install:
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
@@ -26,11 +27,9 @@ jobs:
           path: node_modules
           key: ubuntu-latest-node-v16-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
 
-  install:
-    steps:
-      - name: Install Dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: yarn
+    - name: Install Dependencies
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: yarn
 
   # test:
 
