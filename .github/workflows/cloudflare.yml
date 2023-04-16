@@ -24,9 +24,6 @@ jobs:
       - name: Install dependencies
         run: yarn --frozen-lockfile
 
-      - name: Install Wrangler
-        run: yarn add wrangler global
-
       - name: build
         run: yarn build
 
@@ -34,3 +31,6 @@ jobs:
         uses: cloudflare/wrangler-action@2.0.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          command: publish
+
