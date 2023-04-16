@@ -22,15 +22,12 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
-        uses: actions/setup-node@v3
         run: yarn --frozen-lockfile
 
       - name: build
-        uses: actions/setup-node@v3
         run: yarn build
 
       - name: Wrangler
-        uses: actions/setup-node@v3
         run: wrangler whoami
         env: 
           CLOUDFLARE_ACCOUT_ID: ${{ secrets.CLOUDFLARE_ACCOUT_ID }}
