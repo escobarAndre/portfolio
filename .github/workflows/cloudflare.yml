@@ -22,7 +22,7 @@ jobs:
           secrets: |
               SECRET1
               SECRET2
-          command: publish --name portfolio
+          command: publish --project-name=portfolio
         env:
           SECRET1: ${{ secrets.SECRET1 }}
           SECRET2: ${{ secrets.SECRET2 }}
