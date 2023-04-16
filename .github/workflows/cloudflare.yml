@@ -35,17 +35,25 @@ jobs:
   # test:
 
   build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        os: [ ubuntu-latest ]
+        node: [ 16 ]
+
     steps:
       - name: Build
         run: yarn build
 
   deploy:
-    # runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-    # strategy:
-    #   matrix:
-    #     os: [ ubuntu-latest ]
-    #     node: [ 16 ]
+    strategy:
+      matrix:
+        os: [ ubuntu-latest ]
+        node: [ 16 ]
+        
     steps:
       - name: Wrangler Publish
         uses: cloudflare/wrangler-action@2.0.0
