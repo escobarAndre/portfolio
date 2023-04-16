@@ -11,7 +11,7 @@ jobs:
     name: build
     steps: 
       - name: build
-        run: echo "$secrets.CF_ACCOUNT_ID" ASLJD
+        run: echo '$secrets.CF_ACCOUNT_ID'
 
   deploy:
     runs-on: ubuntu-latest
