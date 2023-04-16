@@ -9,23 +9,24 @@ jobs:
   ci:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        os: [ ubuntu-latest ]
-        node: [ 16 ]
+  strategy:
+    matrix:
+      os: [ ubuntu-latest ]
+      node: [ 16 ]
 
+  steps:
     - uses: actions/setup-node@v1
-        with:
-          node-version: 16
+      with:
+        node-version: 16
 
       # - name: Checkout
       #   uses: actions/checkout@master
 
     - name: Cache node_modules
-        uses: actions/cache@v2
-        with:
-          path: node_modules
-          key: ubuntu-latest-node-v16-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
+      uses: actions/cache@v2
+      with:
+        path: node_modules
+        key: ubuntu-latest-node-v16-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
 
     - name: Install Dependencies
       if: steps.cache.outputs.cache-hit != 'true'
