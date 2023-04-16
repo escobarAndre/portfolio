@@ -40,7 +40,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           secrets: SECRET1
-          command: publish --project-name=portfolio
+          command: publish
         env:
           SECRET1: ${{ secrets.SECRET1 }}
 
