@@ -71,12 +71,12 @@ import { Icon } from "#components";
 
 const route = useRoute();
 
-const githubIcon = h(Icon, {
+const linkedinIcon = h(Icon, {
   name: "mdi:linkedin",
   style: "width: 24px; height: 24px",
 });
 
-const linkedinIcon = h(Icon, {
+const githubIcon = h(Icon, {
   name: "mdi:github",
   style: "width: 24px; height: 24px",
 });
@@ -84,8 +84,8 @@ const linkedinIcon = h(Icon, {
 const menu = [
   {
     title: "_hello",
-    currentTab: () => route.name === "hello",
-    page: "hello",
+    currentTab: () => route.name === "index",
+    page: "",
   },
   {
     title: "_about_me",
