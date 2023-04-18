@@ -66,7 +66,6 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
 import { Icon } from "#components";
 
 const route = useRoute();

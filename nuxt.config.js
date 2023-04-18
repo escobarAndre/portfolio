@@ -5,7 +5,7 @@ export default defineNuxtConfig({
       'Fira Code': true
     },
   },
-  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/google-fonts", 'nuxt-icon'],
+  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/google-fonts", 'nuxt-icon', "nuxt-lodash"],
   // buildModules: ["@nuxtjs/google-fonts"],
   nitro: {
     preset: "cloudflare",
