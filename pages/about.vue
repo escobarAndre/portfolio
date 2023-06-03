@@ -28,7 +28,6 @@
 <script setup>
 import { Icon } from "#components";
 import { bio, experience, education } from "@/utils/about-me-contents";
-import CodeSnipet from "../components/atoms/codeSnippet.vue";
 
 const folders = reactive([
   {

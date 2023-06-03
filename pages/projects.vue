@@ -51,13 +51,11 @@ const { state: repos } = useAsyncState(() =>
   }).then((response) => response.json())
 );
 
-const vueRepos = computed(() => {
-  const reposToUse = ["portfolio"];
+const currentOpenedFolderRepos = computed(() => {
+  const reposToUse = currentOpenedFolder.value?.repos || [];
 
   return repos.value?.filter((repo) => reposToUse.includes(repo.name));
 });
-
-const currentOpenedFolderRepos = computed(() => vueRepos.value);
 
 const folders = reactive([
   {
@@ -74,7 +72,7 @@ const folders = reactive([
         content: "",
       },
     ],
-    repos: vueRepos.value,
+    repos: ["portfolio"],
   },
 ]);
 
@@ -83,11 +81,11 @@ const openedFolders = computed(() =>
 );
 
 const currentOpenedFolder = ref({
-  content: [],
+  repos: [],
 });
 
 onBeforeMount(() => {
-  currentOpenedFolder.value = openedFolders.value.at(-1) || { content: [] };
+  currentOpenedFolder.value = openedFolders.value.at(-1) || { repos: [] };
 });
 
 function getFolderIndex(folderId) {
