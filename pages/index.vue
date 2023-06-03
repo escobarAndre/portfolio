@@ -15,7 +15,13 @@
   <div class="blue-blur" />
 </template>
 
-<script setup></script>
+<script setup>
+import { createClient } from "pexels";
+
+const client = createClient(
+  "gjcwEzr7i1uBDoZGbatuIW8GNTMss9d61YrHDELGZGhB5mb4mO20pgnk"
+);
+</script>
 
 <style scoped>
 .green-blur {
