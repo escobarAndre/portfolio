@@ -15,12 +15,8 @@
     "nuxt-lodash": "^2.4.1"
   },
   "dependencies": {
-    "@octokit/core": "^4.2.1",
     "@vueuse/core": "^10.1.2",
-    "@xata.io/cli": "^0.12.0",
     "nuxt-icon": "^0.3.3",
-    "octokit": "^2.0.19",
-    "pexels": "^1.4.0",
     "wrangler": "^2.15.1"
   }
 }
