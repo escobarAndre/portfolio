@@ -8,7 +8,7 @@
       <h2 class="text-[32px] text-[#4D5BCE]">{{ content.subtitle }}</h2>
     </div>
     <img
-      :src="content.imageURL"
+      src="@/assets/images/andre_escobar.jpeg"
       :alt="content.imageAlt"
       class="rounded-full h-[430px] z-10"
     />
@@ -22,7 +22,7 @@ const content = {
   title: "Hi all. I am",
   name: "André Escobar",
   subtitle: "> Front-end developer",
-  imageURL: "/_nuxt/assets/images/andre_escobar.jpeg",
+  imageURL: "@/_nuxt/assets/images/andre_escobar.jpeg",
   imageAlt: "Developer Picture",
 };
 </script>
