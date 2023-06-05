@@ -244,7 +244,7 @@ const mains = shallowRef([
         return h(
           "div",
           {
-            class: "text-[#607B96] h-full w-full py-20 px-20 grid grid-cols-3",
+            class: `text-[#607B96] h-full w-full py-20 px-20 ${currentOpenedFolderRepos.value ? 'grid grid-cols-3' : 'flex items-center justify-center'}`,
           },
           currentOpenedFolderRepos.value?.map((repo, index) =>
             h(ProjectCard, {
@@ -255,7 +255,12 @@ const mains = shallowRef([
               imageAlt: `image-project: ${index + 1}`,
               projectURL: repo.html_url,
             })
-          ) || ""
+          ) || h(Icon, {
+                          name: "svg-spinners:6-dots-scale",
+                          style: `width: 33px; height: 33px; color: white`,
+                          class:
+                            "animate-spin",
+                        })
         );
       },
     },
